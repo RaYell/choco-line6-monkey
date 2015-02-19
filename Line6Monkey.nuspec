@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if ??? doesn?t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>Line6Monkey</id>
-    <title>__REPLACE__</title>
-    <version>__REPLACE__</version>
-    <authors>__REPLACE__</authors>
-    <owners>__CHOCO_PKG_MAINTAINER_NAME__</owners>
-    <summary>__REPLACE__</summary>
-    <description>__REPLACE__</description>
-    <projectUrl>__REPLACE__</projectUrl>
-    <tags>Line6Monkey admin</tags>
+    <title>Line 6 Monkey</title>
+    <version>1.67</version>
+    <authors>Line 6</authors>
+    <owners>RaYell</owners>
+    <summary>Line 6 Monkey</summary>
+    <description>Monkey keeps your Line 6 gear up-to-date with the latest drivers and software updates</description>
+    <projectUrl>http://line6.com/</projectUrl>
+    <tags>line6 monkey</tags>
     <copyright></copyright>
-    <licenseUrl>__REPLACE__</licenseUrl>
+    <licenseUrl>http://line6.com</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <!-- Important note about https://cdn.rawgit.com: Files are cached permanently after the first request. Use commit URLs when updating the icon. -->
-    <!--<iconUrl>http://cdn.rawgit.com/__CHOCO_PKG_MAINTAINER_REPO__/master/icons/Line6Monkey.png</iconUrl>-->
-    <!--<dependencies>
-      <dependency id="" version="" />
-    </dependencies>-->
+    <iconUrl>https://cdn.rawgit.com/RaYell/choco-line6-monkey/02a98082dfe2d2b7a85f8f77ed5425630b1f263b/icon.png</iconUrl>
     <releaseNotes></releaseNotes>
   </metadata>
   <files>
