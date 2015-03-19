@@ -1,0 +1,37 @@
+# master branch configuration
+-
+  branches:
+    only:
+      - master
+  
+  skip_tags: true
+  skip_commits:
+    message: /Update.*\.md/
+  
+  version: 1.37.{build}
+  build_script:
+    - choco pack
+    - choco install Line6Monkey -s '%cd%' -f
+    - choco uninstall Line6Monkey
+  
+  before_deploy:
+    - ps: Get-ChildItem .\*.nupkg | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
+      
+# develop, feature & bugfix branches
+-
+  branches:
+    only:
+      - develop
+  
+  skip_tags: true
+  skip_commits:
+    message: /Update.*\.md/
+  
+  version: 1.37.{build}
+  build_script:
+    - choco pack
+    - choco install Line6Monkey -s '%cd%' -f
+    - choco uninstall Line6Monkey
+  
+  before_deploy:
+    - ps: Get-ChildItem .\*.nupkg | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
