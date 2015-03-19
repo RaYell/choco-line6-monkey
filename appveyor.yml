@@ -15,9 +15,6 @@
     - choco install Line6Monkey -s '%cd%' -f
     - choco uninstall Line6Monkey
   
-  before_deploy:
-    - ps: Get-ChildItem .\*.nupkg | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
-    
   artifacts:
     - path: '*.nupkg'
     
