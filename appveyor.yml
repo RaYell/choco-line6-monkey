@@ -8,10 +8,6 @@
   skip_commits:
     message: /Update.*\.md/
     
-  environment:
-    CHOCO_API_KEY:
-      secure: e6mHuTsjw+AZ+2LfTOeosjg1aNJGwhVpJ92eSVWA6wtooaNJN2NQfvQVIocQ+etC
-  
   version: 1.67.{build}
   
   build_script:
@@ -21,6 +17,18 @@
   
   before_deploy:
     - ps: Get-ChildItem .\*.nupkg | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
+    
+  deploy:
+    - provider: NuGet
+      server: http://chocolatey.org/api/v2/
+      api_key:
+        secure: e6mHuTsjw+AZ+2LfTOeosjg1aNJGwhVpJ92eSVWA6wtooaNJN2NQfvQVIocQ+etC
+      artifact: /.*\.nupkg/
+    - provider: GitHub
+      release: 1.67
+      artifact: /.*\.nupkg/
+      auth_token:
+        secure: r+IxpBcxWvxwGdiNvsHFEWa0wa8WPzw3uRi+1/ObwPoGS16bzG9FObtJIsFdmj0L
     
   deploy_script:
     - choco apikey -k %CHOCO_API_KEY% -source https://chocolatey.org/
@@ -45,3 +53,10 @@
   
   before_deploy:
     - ps: Get-ChildItem .\*.nupkg | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
+  
+  deploy:
+    - provider: GitHub
+      release: $(APPVEYOR_BUILD_VERSION)-preview
+      artifact: /.*\.nupkg/
+      auth_token:
+        secure: r+IxpBcxWvxwGdiNvsHFEWa0wa8WPzw3uRi+1/ObwPoGS16bzG9FObtJIsFdmj0L
