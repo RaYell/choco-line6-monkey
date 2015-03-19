@@ -29,10 +29,6 @@
       artifact: /.*\.nupkg/
       auth_token:
         secure: r+IxpBcxWvxwGdiNvsHFEWa0wa8WPzw3uRi+1/ObwPoGS16bzG9FObtJIsFdmj0L
-    
-  deploy_script:
-    - choco apikey -k %CHOCO_API_KEY% -source https://chocolatey.org/
-    - choco push Line6Monkey.1.67.nupkg -s https://chocolatey.org/
       
 # develop, feature & bugfix branches
 -
