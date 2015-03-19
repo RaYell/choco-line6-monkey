@@ -9,12 +9,12 @@
     <owners>RaYell</owners>
     <summary>Line 6 Monkey</summary>
     <description>Monkey keeps your Line 6 gear up-to-date with the latest drivers and software updates</description>
-    <projectUrl>http://line6.com/</projectUrl>
+    <projectUrl>http://line6.com/software</projectUrl>
     <tags>line6 monkey</tags>
     <copyright></copyright>
     <licenseUrl>http://line6.com</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/RaYell/choco-line6-monkey/02a98082dfe2d2b7a85f8f77ed5425630b1f263b/icon.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/RaYell/choco-line6-monkey/f06cbafd2ae0a6eaf7c4fe5d37d744971b6fca9c/icon.png</iconUrl>
     <releaseNotes></releaseNotes>
   </metadata>
   <files>
