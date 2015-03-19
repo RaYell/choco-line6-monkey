@@ -1,0 +1,47 @@
+# master branch configuration
+-
+  branches:
+    only:
+      - master
+  
+  skip_tags: true
+  skip_commits:
+    message: /Update.*\.md/
+    
+  environment:
+    CHOCO_API_KEY:
+      secure: e6mHuTsjw+AZ+2LfTOeosjg1aNJGwhVpJ92eSVWA6wtooaNJN2NQfvQVIocQ+etC
+  
+  version: 1.67.{build}
+  
+  build_script:
+    - choco pack
+    - choco install Line6Monkey -s '%cd%' -f
+    - choco uninstall Line6Monkey
+  
+  before_deploy:
+    - ps: Get-ChildItem .\*.nupkg | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
+    
+  deploy_script:
+    - choco apikey -k %CHOCO_API_KEY% -source https://chocolatey.org/
+    - choco push Line6Monkey.1.67.nupkg -s https://chocolatey.org/
+      
+# develop, feature & bugfix branches
+-
+  branches:
+    only:
+      - develop
+  
+  skip_tags: true
+  skip_commits:
+    message: /Update.*\.md/
+  
+  version: 1.67.{build}
+  
+  build_script:
+    - choco pack
+    - choco install Line6Monkey -s '%cd%' -f
+    - choco uninstall Line6Monkey
+  
+  before_deploy:
+    - ps: Get-ChildItem .\*.nupkg | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
