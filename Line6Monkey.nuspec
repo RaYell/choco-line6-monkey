@@ -4,7 +4,7 @@
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>Line6Monkey</id>
     <title>Line 6 Monkey</title>
-    <version>1.71</version>
+    <version>1.72</version>
     <authors>Line 6</authors>
     <owners>RaYell</owners>
     <summary>Line 6 Monkey</summary>
