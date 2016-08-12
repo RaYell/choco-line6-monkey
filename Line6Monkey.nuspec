@@ -16,6 +16,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://cdn.rawgit.com/RaYell/choco-line6-monkey/f06cbafd2ae0a6eaf7c4fe5d37d744971b6fca9c/icon.png</iconUrl>
     <releaseNotes></releaseNotes>
+    <packageSourceUrl>https://github.com/RaYell/choco-line6-monkey</packageSourceUrl>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
