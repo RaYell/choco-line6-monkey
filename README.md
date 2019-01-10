@@ -1,3 +1,5 @@
+# This project is no longer maintained!
+
 # Description
 [Chocolatey](https://chocolatey.org) package for [Line 6 Monkey](http://line6.com/software).
 
